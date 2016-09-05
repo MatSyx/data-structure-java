@@ -39,6 +39,14 @@ public class SequenceList<T> {
 		return (T) elementData[index];
 	}
 
+	public T set(T element, int index) {
+		if (index < 0 || index > size - 1)
+			throw new IndexOutOfBoundsException("顺序表索引越界！");
+		T oldValue = (T) elementData[index];
+		elementData[index] = element;
+		return oldValue;
+	}
+
 	public int indexOf(T element) {
 		for (int i = 0; i < size; i++) {
 			if (elementData[i].equals(element))

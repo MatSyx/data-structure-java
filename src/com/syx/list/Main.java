@@ -30,6 +30,8 @@ public class Main {
 		System.out.println("get "+sl.get(1));
 		System.out.println(sl.toString());
 		System.out.println("bb indexof "+sl.indexOf("bb"));
+		System.out.println("set 1 "+sl.set("set", 1));
+		System.out.println(sl.toString());
 		sl.clear();
 		System.out.println(sl.toString());
 	}
