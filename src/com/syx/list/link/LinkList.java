@@ -51,14 +51,14 @@ public class LinkList<T> {
 		}
 		if (node == null || pos > index - 1)
 			throw new IndexOutOfBoundsException("链表索引越界！");
-		Node tmpNode=node.next;
-		node.next=tmpNode.next;
-		T delValue=tmpNode.data;
-		tmpNode=null;
+		Node tmpNode = node.next;
+		node.next = tmpNode.next;
+		T delValue = tmpNode.data;
+		tmpNode = null;
 		return delValue;
 	}
-	
-	public T set(T element,int index) {
+
+	public T set(T element, int index) {
 		Node node = header;
 		int pos = 0;
 		while (node != null && pos < index) {
@@ -67,12 +67,12 @@ public class LinkList<T> {
 		}
 		if (node == null || pos > index)
 			throw new IndexOutOfBoundsException("链表索引越界！");
-		Node oldNode=node;
-		node.data=element;
+		Node oldNode = node;
+		node.data = element;
 		return oldNode.data;
 	}
-	
-	public T get(int index){
+
+	public T get(int index) {
 		Node node = header;
 		int pos = 0;
 		while (node != null && pos < index) {
@@ -83,40 +83,40 @@ public class LinkList<T> {
 			throw new IndexOutOfBoundsException("链表索引越界！");
 		return node.data;
 	}
-	
+
 	public int indexOf(T element) {
-		Node node=header.next;
-		int index=1;
-		while(node!=null){
-			if(!node.data.equals(element)){
-				node=node.next;
+		Node node = header.next;
+		int index = 1;
+		while (node != null) {
+			if (!node.data.equals(element)) {
+				node = node.next;
 				index++;
-			}else 
+			} else
 				return index;
-		}			
-		return -1; //node==null
+		}
+		return -1; // node==null
 	}
-	
-	public int  length() {
-		Node node=header.next;
-		int len=0;
-		while (node!=null) {
+
+	public int length() {
+		Node node = header.next;
+		int len = 0;
+		while (node != null) {
 			len++;
-			node=node.next;
+			node = node.next;
 		}
 		return len;
 	}
 
 	@Override
 	public String toString() {
-		StringBuilder sb=new StringBuilder("[");
-		Node node=header.next;
-		if(node==null){
+		StringBuilder sb = new StringBuilder("[");
+		Node node = header.next;
+		if (node == null) {
 			return "[]";
-		}else{
-			while (node!=null) {
-				sb.append(node.data.toString()+", ");
-				node=node.next;
+		} else {
+			while (node != null) {
+				sb.append(node.data.toString() + ", ");
+				node = node.next;
 			}
 			int len = sb.length();
 			return sb.delete(len - 2, len).append("]").toString();
