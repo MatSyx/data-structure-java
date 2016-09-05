@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.syx.list;
+package com.syx.list.array;
 
 import java.util.Arrays;
 
